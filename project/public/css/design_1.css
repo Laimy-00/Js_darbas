@@ -1,0 +1,78 @@
+body{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 100px auto 50px;
+    grid-gap: 10px;
+    grid-template-areas: 
+        'h h h h h h h h h h'
+        'a a m m m m m m m m'
+        'f f f f f f f f f f';
+
+}
+body > header{
+    grid-area: h;
+}
+body > main{
+    grid-area: m;
+}
+body > aside{
+    grid-area: a;
+}
+body > footer{
+    grid-area: f;
+}
+
+body > * {
+    border: 1px solid black;
+    margin: 3px;
+}
+
+body > header {
+    background-color: hotpink;
+
+
+
+}
+.main_content {
+    background-color: blue;
+}
+body > aside {
+    background-color: yellow;
+}
+body > footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.reklama {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    background-color: grey;
+    color: white;
+    width: 150px;
+}
+.main_content, body >aside {
+    float: left;
+}
+nav > ul li{
+    display: inline;
+}
+nav > ul{
+    width: 100%;
+    height: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    padding-right: 10px;
+    align-items: center;
+}
+nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

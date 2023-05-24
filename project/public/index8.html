@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mano puslapis</title>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 255, 98);
+            border-radius: 50%;
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .three{
+            width: 200px;
+            height: 150px;
+            background-color: orange;
+            border-radius: 50% / 50%; 
+        }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+        <div class="one"></div>
+        <br>
+        <div class="two"></div>
+        <br>
+        <div class="three"></div>
+    </main>
+    <footer></footer>
+    <script>
+        const button1 = document.querySelector('.one');
+        const button2 = document.querySelector('.two');
+        const button3 = document.querySelector('.three');
+
+        button1.addEventListener('click', function() {
+            const item = document.querySelector('.one');
+            item.style.display = 'none';
+        });
+        button2.addEventListener('click', function() {
+            const item = document.querySelector('.two');
+            item.style.display = 'none';
+        });
+        button3.addEventListener('click', function() {
+            const item = document.querySelector('.three');
+            item.style.display = 'none';
+        });    
+    </script>
+  </body>
+</html>

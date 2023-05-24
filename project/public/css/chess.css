@@ -1,0 +1,59 @@
+div.chess {
+    display: flex;
+    width: 420px;
+    flex-wrap: wrap;
+}
+
+main.port{
+    height: 420px;
+}
+
+div.chess > div {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    padding: 10px;
+    text-align:center;
+    line-height:50px;
+    font-size: 16px;
+    border-color: rgb(0, 0, 0);
+    border: 1px solid;
+
+}
+div.c1{
+    background-color: rgb(65, 64, 64);
+}
+div.c2{
+    background-color: rgb(82, 166, 214);
+}
+div.c3{
+    background-color: rgb(64, 235, 121);
+}
+div.c4{
+    background-color: rgb(185, 92, 92);
+}
+div.c1:hover {
+    background-color: #dfd39e;
+    margin: 0;
+    height: 60px;
+    width: 60px;
+
+}
+div.c2:hover {
+    background-color: #a71c1c;
+    margin: 0;
+    height: 60px;
+    width: 60px;
+}
+div.c3:hover {
+    background-color: #ad019f;
+    margin: 0;
+    height: 60px;
+    width: 60px;
+}
+div.c4:hover {
+    background-color: #28c730;
+    margin: 0;
+    height: 60px;
+    width: 60px;v
+}

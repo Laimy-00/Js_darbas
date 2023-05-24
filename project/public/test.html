@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form class="form">
+    <textarea rows="10" ></textarea>
+    <div> 
+        <button type="button" data-method="pop">Pop</button>
+        <button type="button" data-method="push">Push</button>
+        <button type="button" data-method="shift">Shift</button>
+        <button type="button" data-method="unshift">Unshift</button>
+    </div>
+    <div class="result"></div>
+    <br>
+    <button type="refresh">Refresh</button>
+</form>
+</body>
+<script>
+
+    //Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nemo amet cum optio sed, blanditiis alias animi similique cumque, quae consectetur magnam, vero dolore? Officiis, atque. Omnis eaque reiciendis natus. Nisi, unde incidunt blanditiis, rem eligendi ipsum veritatis saepe aliquam corrupti voluptates, at qui iste quos quam sit modi libero!
+
+    // const text = '2023 gegužės mėn. 11 d. 17:25 , sukneles bei galimas klaidas pasakys Delfi TV studijoje?';
+    // const regex = /\d+/g;
+    // const numbers = text.match(regex);
+    // let newTest = text;
+    // if (numbers) {
+    //     numbers.forEach(number => {
+    //         newTest = newTest.replace(number, number**2);
+    //     });
+    // }
+    // console.log(newTest);
+
+    const myForm = document.querySelector('.form');
+    const textarea = myForm.querySelector('textarea');
+    const result = document.querySelector('.result');
+    const buttons = myForm.querySelectorAll('form > div > button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            const method = this.getAttribute('data-method');
+            let text = textarea.value;
+            if (result.textContent) {
+                text = result.textContent;
+            }
+            let words = text.split(' ');
+
+            switch (method) {
+                case 'pop':
+                    words.pop();
+                    break;
+                case 'push':
+                    words.push('push-word');
+                    break;
+                case 'shift':
+                    words.shift();
+                    break;
+                case 'unshift':
+                    words.unshift('unshift-word');
+                    break;
+            }
+
+            result.textContent = words.join(' ');
+        });
+    });
+</script>
+</body>
+</html>

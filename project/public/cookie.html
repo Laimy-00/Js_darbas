@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="">
+        <input type="color" id="colorInput"></input>
+        <button id="applyButton">Apply</button>
+    </form>
+    <button id="deleteButton">Delete</button>
+</body>
+<script>
+    const colorInput = document.getElementById('colorInput');
+    const applyButton = document.getElementById('applyButton');
+    const deleteButton = document.getElementById('deleteButton');
+
+    function setColorAndVisibility(color) {
+        document.body.style.backgroundColor = color;
+        colorInput.value = color;
+        if (color) {
+            colorInput.style.display = 'none';
+            applyButton.style.display = 'none';
+            deleteButton.style.display = 'inline-block';
+        } else {
+            colorInput.style.display = 'inline-block';
+            applyButton.style.display = 'inline-block';
+            deleteButton.style.display = 'none';
+        }
+    }
+
+    let cookieColor = document.cookie.replace(/(?:(?:^|.*;\s*)color\s*=\s*([^;]*).*$)|^.*$/, "$1");
+    setColorAndVisibility(cookieColor);
+
+    applyButton.addEventListener('click', function() {
+        const selectedColor = colorInput.value;
+        document.cookie = `color=${selectedColor}`;
+        setColorAndVisibility(selectedColor);
+    });
+
+    deleteButton.addEventListener('click', function() {
+        document.cookie = 'color=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        setColorAndVisibility('');
+        location.reload();
+    });
+
+    let dataGlobal;
+
+    console.log('BLABLABLABLABLA');
+    fetch('/portfolio.json')
+    .then(res => res.json())
+    .then(data => {
+        data.forEach(element => {
+            console.log(element.title); 
+        });        
+    });
+    console.log('12312312312313123');
+
+</script>
+</html>

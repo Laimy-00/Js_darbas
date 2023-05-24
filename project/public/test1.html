@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+</body>
+<script>
+
+    
+
+    // let person = {
+    //     name: 'Rosa',
+    //     age: 120,
+    //     alive: false,
+    //     interests: ['swimming', 'cards'],
+    // };
+
+    // const input = prompt('Please provide a new name:');
+    // if (input) {
+    //     person.name = input;
+    //     person.interests.push('enjoying life');
+    // }
+    // delete person.age;
+    // const ageInDays = Math.floor(Math.random() * (101*365)) +  20 * 365;
+    // person.birthdate = new Date(Date.now() - ageInDays * 24 * 60 * 60 * 1000);  
+    // //converts from days to  ms  (24  hours, 60 min, 60  sec, 1000ms)
+
+    // if (ageInDays / 365 < 100)  {
+    //     person.alive = true;
+    // }
+    //     console.log(person);
+
+    //-----------------------------------------------------------
+
+
+    // let array = ['I','study','JavaScript','right','now'];
+    // array.splice(0, 3, 'Lets','dance');
+    // let a = array.join(' ');
+    // console.log(a);
+
+
+    //-----------------------------------------------------------
+
+    // const first = ['slice','splice','concat'];
+    // const second = ['push','pop','shift','unshift'];
+    // console.log(first.concat(second,'length', 7, {subject:'methods'}));
+
+    //-----------------------------------------------------------
+    
+    // let accords = ["D","G","C","C7","F"];
+    // let accords = ['G','F','C'];
+    // let accords = ['Dm','G7','E','A'];
+    // let accords = ['F','E','A7','Ab7','Gm7','C7'];
+
+    // function addSeven(arr, callb){
+    //     let newAccords = [];
+    //     arr.forEach(element => {
+    //         let ln = element.length;
+    //         if (element[ln-1] != '7'){
+    //             element = callb(element);
+    //         }
+    //         newAccords.push(element);
+    //     });
+    //     console.log(newAccords);
+    // }
+
+    // addSeven(accords, function(a){
+    //     a += 7;
+    //     return a;
+    // })
+
+   
+    //-----------------------------------------------------------
+
+    // let numbers = [5, 1, 7, 2, -9, 8, 2, 7, 9, 4, -5, 2, -6, 8, -4, 6];
+
+    // let index = 0;
+    // numbers.forEach(element => {
+    //     let body = document.createElement('div');
+    //     body.innerHTML = `Index Nr: ${index}, value: ${element}`;
+    //     document.body.appendChild(body);
+    //     index++;
+    // });
+
+    // function printArr(arr, callb) {
+    //     let index = 0;
+    //     arr.forEach(element => {
+    //         callb(element, index);
+    //         index++;
+    //     });
+    // }
+
+    // function printPage (element, index) {
+    //     let body = document.createElement('div');
+    //     body.innerHTML = `Index Nr: ${index}, value: ${element}`;
+    //     document.body.appendChild(body);
+    // }
+
+    // printArr(numbers, printPage);
+
+    //-----------------------------------------------------------
+
+    let numbers = [5, 1, 7, 2, -9, 8, 2, 7, 9, 4, -5, 2, -6, 8, -4, 6];
+    const budgets = [
+    {
+        name: "Rytis",
+        budget: 50,
+    },
+    {
+        name: "Saulė",
+        budget: 230,
+    },
+    {
+        name: "Paulius",
+        budget: 1500,
+    },
+    {
+        name: "Gytis",
+        budget: 92,
+    },
+    {
+        name: "Sandra",
+        budget: 7,
+    },
+    ];
+
+    
+    let names = budgets.map((budget) => budget.name);
+    let sum = budgets.map((budget) => budget.budget).reduce((total, value) => total + value, 0);
+    let arrDoubled = numbers.map(num => num * 2);
+
+    function arrMultiplied(x) {
+    return numbers.map(num => num * x);
+    }
+
+    let newAr = arrDoubled;
+    let newAr2 = arrMultiplied(3);
+
+    // newAr.forEach(element => {
+    // console.log(element);
+    // });
+
+    // newAr2.forEach(element => {
+    // console.log(element);
+    // });
+
+    // console.log(sum);
+    // console.log(names);
+
+    
+    const input = prompt();
+    let greetings;
+    
+    if (names.includes(input)) {
+        if (input[input.length - 1] === 's') {
+            greetings = 'Mr';
+        }
+        else {
+            greetings = 'Miss';
+        }
+        console.log(`Welcome ${greetings}. ${input}!`);
+    }
+    else{
+        console.log(`Unfortunately name ${input} is not in our list.`);
+    }
+
+    function arrCountTwos(arr) {
+        return arr.filter(num => num === 2);
+    }
+    console.log(arrCountTwos(numbers));
+
+</script>
+</html>

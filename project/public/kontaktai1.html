@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mano puslapis</title>
+     <link rel="stylesheet" href="/css/layout.css">
+     <link rel="stylesheet" href="/css/forms.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Pradžia</a>
+            </li>
+            <li>
+                <a href="kontaktai.html">Kontaktai</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div>
+        <div class="container">
+            <div class="components">
+                <h1>Mano kontaktai</h1>
+                <form action="kursiustiduomenis.php" method="post" class="form">
+
+                    <label for="vardas">Vardas</label>
+                    <input type="text" name="vardas" id="vardas" class="form__input">
+
+                    <label for="pavarde">Pavarde</label>
+                    <input type="text" name="pavarde" id="pavarde" class="form__input">
+
+                    <label for="email">El. paštas</label>
+                    <input type="email" name="email" id="email" class="form__input">
+
+                    <label for="kursas">Kursas</label>
+                    <select name="kursas" id="kursas" class="form__input">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+
+                    <label for="komentaras">Komentaras</label>
+                    <textarea name="komentaras" id="komentaras" cols="30" rows="10" class="form__input"></textarea>
+
+                    <div>
+                        <button type="submit" class="btn btn__primary">Siųsti</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="components">
+                <div id="textToChange">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ullam vero totam quisquam iure unde sint, dolorum inventore tempora at.
+                </div>
+            </div>
+        </div>
+    </div>    
+</main>
+<footer>
+      <span>© 2023 - visos teisės saugomos</span>
+</footer>
+<script src="/js/kontaktai.js" defer></script>
+</body>
+</html>

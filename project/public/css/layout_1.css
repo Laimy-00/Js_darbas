@@ -1,0 +1,27 @@
+@media only screen  and (max-width: 900px){
+    body {
+        grid-template-areas:
+        'h h h h h h h h h h'
+        'm m m m m m m m a a'
+        'f f f f f f f f f f';
+    }
+    main{
+        background-color: blueviolet;
+    }
+}
+@media only screen  and (max-width: 600px){
+    body {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 100px auto auto 50px;
+        grid-gap: 10px;
+        grid-template-areas: 
+        'h h h h h h h h h h'
+        'm m m m m m m m m m'
+        'a a a a a a a a a a'
+        'f f f f f f f f f f';
+    }
+    main{
+        background-color: blueviolet;
+    }
+}

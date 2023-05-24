@@ -1,0 +1,69 @@
+body > * {
+    border: 1px solid black;
+    margin: 3px;
+}
+
+body > header {
+    background-color: hotpink;
+}
+
+.main_content {
+    background-color: #9b9b79;
+}
+
+body > div > aside {
+    background-color: cornflowerblue;
+}
+
+body > footer {
+    background-color: #3f3e3e;
+    color: white;
+}
+
+div.relkama {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: #3f3e3e;
+    color: white;
+    width: 150px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* NAVIGACIJOS dizainas */
+body > header nav ul li {
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: 2px solid white;
+}
+
+body > header nav ul li:last-child {
+    border-right: none;
+}
+body > header nav ul li:hover a {
+    transition: all 0.5s cubic-bezier(1, 0.48, 0.01, 0.74);
+    font-size: 1.7em;
+}
+body > header nav ul li:hover {
+    transition: all 0.5s cubic-bezier(1, 0.48, 0.01, 0.74);
+    margin: 2px;
+    padding: 2px;
+    border-bottom: 1px dotted white;
+}
+
+body > header nav ul li {
+    display:inline;
+    font-size: 1.5em;
+}
+
+nav ul li a{
+    transition: font-size 0.5s;
+    color: white;
+    text-decoration: none;
+}
