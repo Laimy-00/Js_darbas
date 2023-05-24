@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="js/jquery.min.js"></script>
+    <title>Mano puslapis</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias necessitatibus libero minus, eaque esse unde delectus aspernatur quaerat. Sit, maiores!
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio minima blanditiis similique exercitationem voluptatibus molestiae totam, voluptas molestias numquam itaque?
+      </div>
+      <div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos repellendus soluta vitae explicabo perspiciatis cum consequatur debitis unde pariatur nulla!
+      </div>
+      <div></div>
+      <div>
+        <button>Pirmas</button>
+        <button>Antras</button>
+        <button>Trecias</button>
+        <button>Ketvirtas</button>
+        <button id="btn5">Penktas</button>
+        <button id="btn6">Sestas</button>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis beatae asperiores, facilis voluptatem, molestias sapiente, est quis laudantium accusantium nulla odio! Impedit voluptatibus error ipsam veritatis sequi non commodi perspiciatis obcaecati maxime assumenda, nihil necessitatibus eaque aut fuga voluptatem corrupti aspernatur aliquid ea voluptates. Eaque explicabo, repudiandae veniam beatae tenetur sint modi dolores ipsum enim eos quasi voluptatum omnis rerum! Optio molestiae maxime, reiciendis expedita veniam consequuntur saepe nisi obcaecati possimus ex, sunt consequatur veritatis nemo assumenda esse, non aliquam alias iste praesentium quas neque illo error architecto voluptate? Laborum dolorem corrupti totam soluta iste modi asperiores a quibusdam nemo suscipit ipsa dolore iusto ipsam quos ratione, sit voluptas labore minus consectetur ea tempora doloribus facilis pariatur animi? Ipsam et quia ex eius molestias provident, aliquid similique quo deserunt vero nihil perspiciatis maxime tempore! Cupiditate quam illum laborum sapiente assumenda eum explicabo! Qui, sapiente vel. Placeat incidunt, qui voluptas tempora vel, quas suscipit dolorum dolor, dignissimos quasi dolorem? Quidem repudiandae iste aliquam illo ipsam rem rerum hic ipsa perspiciatis tenetur cumque possimus quia tempora, maxime amet dolore at distinctio accusantium, veniam doloribus animi odit? Sunt quas sit doloribus consequatur vero corrupti, ullam accusantium velit beatae inventore nobis molestias nihil odit.</p>
+    </main>
+    <footer></footer>
+    <script>
+      const buttons = document.querySelectorAll('button');
+      buttons[0].addEventListener('click', function() {
+        const line = document.querySelector('main > div');
+        line.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id ea quisquam! Et sunt repellat sapiente laborum, officia ab? Perferendis dolores consequatur officiis? Optio temporibus saepe, esse quisquam distinctio amet.';
+      });
+
+
+      buttons[1].addEventListener('click', function() {
+        const lines = document.querySelectorAll('main > div');
+        let text = lines[1].innerHTML;
+        text = text + 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque id ea quisquam! Et sunt repellat sapiente laborum, officia ab? Perferendis dolores consequatur officiis? Optio temporibus saepe, esse quisquam distinctio amet.';
+        lines[1].innerHTML = text;
+      });
+
+      buttons[2].addEventListener('click', function() {
+        const lines = document.querySelectorAll('main > div');
+        lines[2].style.color = 'red';
+                
+      });
+
+      buttons[3].addEventListener('click', function() {
+        const lines = document.querySelectorAll('main > div');
+        lines[3].innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+
+      });
+      $("#btn5").click(function() {
+        $("p").hide();
+      });
+      $("#btn6").click(function() {
+        $("p").show();
+      });
+    </script>
+  </body>
+</html>

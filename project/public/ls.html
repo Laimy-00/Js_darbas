@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="">
+        <textarea id="myTextarea" cols="30" rows="10"></textarea>
+        <h2 id="displayText"></h2>
+        <button id="saveButton">Save</button>
+    </form>
+</body>
+<script>
+    const textarea = document.getElementById('myTextarea');
+    const displayText = document.getElementById('displayText');
+    const saveButton = document.getElementById('saveButton');
+    let blurTimer;
+
+    textarea.addEventListener('keyup', function(event) {
+        clearTimeout(blurTimer); 
+        blurTimer = setTimeout(() => {
+            textarea.blur();
+        }, 2000);
+    });
+
+    textarea.addEventListener('blur', function() {
+        const text = textarea.value;
+        displayText.textContent = text;
+    });
+
+    saveButton.addEventListener('click', function() {
+        sessionStorage.setItem('text', textarea.value);
+    });
+    if (localStorage.getItem('attac') != 'yes') {
+        window.onload = function() {
+            if (confirm('Agree to terms and conditions')) {
+                sessionStorage.setItem('attac', 'yes');
+            } else {
+                sessionStorage.setItem('attac', 'no');
+                location.reload();
+            }
+        };
+    };
+    
+</script>
+</html>

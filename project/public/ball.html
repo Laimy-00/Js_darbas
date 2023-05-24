@@ -1,0 +1,90 @@
+<style>
+    body {
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(34, 27, 44);
+    }
+
+    #floor,
+    #ball {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    }
+
+    #floor {
+    height: 50px;
+    width: 500px;
+    background-color: darkcyan;
+    bottom: 0;
+    }
+
+    #ball {
+    width: 100px;
+    height: 100px;
+    background-color: hotpink;
+    border-radius: 50%;
+    bottom: 40px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgb(19, 19, 19);
+}
+</style>
+<div id="ball"></div>
+<div id="floor"></div>
+<script>
+    // const ball = document.getElementById('ball');
+    
+    // document.addEventListener('keydown', function(event) {
+     
+    //     let coors = ball.style.bottom;
+    //  });
+    // select the ball and floor elements
+const ball = document.querySelector("#ball");
+const floor = document.querySelector("#floor");
+
+// set the initial velocity and gravity
+let velocity = 0;
+const gravity = 0.5;
+
+// listen for the up arrow key press
+document.addEventListener("keydown", function (event) {
+  if (event.code === "ArrowUp") {
+    // change the velocity to make the ball jump
+    velocity = -10;
+  }
+});
+// listen for mouse press
+ball.addEventListener("click", function (event) {
+  // change the velocity to make the ball jump
+  velocity = -5;
+});
+
+// update the ball's position every frame
+function update() {
+  // calculate the new position based on the velocity
+  let newPosition = ball.offsetTop + velocity;
+
+  // check if the ball is colliding with the floor
+  if (newPosition + ball.clientHeight >= floor.offsetTop) {
+    // set the new position to be on the floor
+    newPosition = floor.offsetTop - ball.clientHeight;
+
+    // reverse the velocity and reduce it by some damping factor
+    velocity = -velocity * 0.8;
+  }
+
+  // update the ball's position
+  ball.style.top = newPosition + "px";
+
+  // update the velocity with gravity
+  velocity += gravity;
+
+  // request the next frame
+  requestAnimationFrame(update);
+}
+
+// start the animation loop
+requestAnimationFrame(update);
+
+</script>

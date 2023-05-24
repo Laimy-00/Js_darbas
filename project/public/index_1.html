@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mano puslapis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Pradžia</a>
+            </li>
+            <li>
+                <a href="kontaktai.html">Kontaktai</a>
+            </li>
+            <li>
+                <a href="portfolio.html">Portfolio</a>
+            </li>
+            <li>
+                <a href="payment.html">Payment</a>
+            </li>
+            <li>
+                <a href="index5.html">Uzdotis</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main_content">
+    <h1>Mano pirmas puslapis</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum eius eum, eveniet illo in iste itaque iusto
+        libero, mollitia nulla numquam obcaecati quisquam repellendus sapiente vitae. Aliquid necessitatibus placeat
+        quia ullam? Consectetur cumque cupiditate dolore dolorem eaque ipsa laudantium reiciendis tenetur totam. Animi
+        cum deserunt dolor ea eveniet expedita fugiat hic incidunt ipsa maxime necessitatibus, nemo odio rem sapiente
+        soluta, totam vitae voluptate? Adipisci aliquam consequatur dicta ea earum eligendi eveniet facere impedit
+        libero maiores non omnis, porro quod repellendus similique soluta ut veritatis vitae voluptates voluptatibus!
+        Atque consequatur impedit iure magnam odio officia quam repudiandae tempora tempore voluptatibus? Ab adipisci
+        alias at consectetur, dignissimos doloremque eius et expedita facilis, hic in inventore iusto labore libero nisi
+        officia officiis optio possimus quam quibusdam repudiandae similique sit sunt totam vel veniam vitae voluptatum!
+        Alias, magnam, sint. Enim eum quisquam saepe. Exercitationem illo ipsa officiis rem suscipit? Fugit harum ipsum
+        natus quis quo. Alias assumenda cumque cupiditate dicta earum eius excepturi exercitationem, expedita explicabo
+        harum impedit in labore laboriosam laudantium maxime minima, mollitia neque nostrum odit pariatur perspiciatis
+        provident quaerat quam quis quisquam quo quos recusandae, rem repellendus reprehenderit soluta tempora tempore
+        ullam ut veritatis voluptates voluptatibus. Beatae blanditiis commodi earum laborum minus quas sequi ullam, vel!
+        Ad alias architecto aspernatur beatae corporis culpa dignissimos dolore ducimus earum eos et eum ex
+        exercitationem expedita facilis fuga illo impedit incidunt ipsum iure, minus, obcaecati officia perferendis
+        perspiciatis, praesentium provident quas quasi rerum sapiente suscipit tempora tempore vel veniam? Eaque harum
+        libero omnis quasi repellendus! Ab architecto deleniti impedit ipsa magni natus numquam officia perferendis
+        quasi qui sint, sit velit veniam. Accusantium adipisci aut cum ea exercitationem, modi molestiae natus quos
+        veritatis? A libero necessitatibus rem velit! Aliquid cum delectus doloremque ducimus eum exercitationem
+        laboriosam omnis quibusdam rerum temporibus! Libero, quibusdam, sit! Aliquam aspernatur culpa, cupiditate
+        deserunt dolores eius eligendi expedita illo impedit ipsa neque nulla optio perferendis placeat quae quasi,
+        quisquam sapiente, similique tempora tempore. Amet expedita harum laboriosam omnis quibusdam similique velit
+        vitae voluptates? A alias cumque, dignissimos ipsa nemo ratione sed vitae voluptas.</p>
+</main>
+<aside>
+    <div class="reklama">Tavo reklama</div>
+</aside>
+<footer>
+    <span>© 2023 - visos teisės saugomos</span>
+</footer>
+</body>
+<script>
+//     let settings = [
+//     {
+//     "title": "Pradžia",
+//     "url": "/"
+//     },
+//     {
+//     "title": "Kontaktai",
+//     "url": "kontaktai.html"
+//     },
+//     {
+//     "title": "Portfolio",
+//     "url": "portfolio.html"
+//     },
+//     {
+//     "title": "Payment",
+//     "url": "payment.html"
+//     },
+//     {
+//     "title": "Uzdotis",
+//     "url": "index5.html"
+//     }
+//   ];
+  let settings[
+    {
+    "title": "Pradžia",
+    "url": "/"
+    },
+    {
+    "title": "Kontaktai",
+    "url": "kontaktai.html"
+    },
+    {
+    "title": "Portfolio",
+    "url": "portfolio.html"
+    },
+    {
+    "title": "Payment",
+    "url": "payment.html"
+    },
+    {
+    "title": "Uzdotis",
+    "url": "index5.html"
+    }
+  ]
+  const aTags = document.querySelectorAll('nav > ul > li > a');
+  aTags.forEach(a => a.remove());
+
+  const liTags = document.querySelectorAll('nav > ul > li');
+  liTags.forEach(li => li.remove());
+
+  let navList = document.querySelector("nav > ul");
+  for (let i = 0; i < settings.length; i++) {
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+    link.textContent = settings[i].title;
+    link.href = settings[i].url;
+    listItem.appendChild(link);
+    navList.appendChild(listItem);    
+  }
+
+
+
+  const currentUrl = window.location.pathname;
+  const allLinks = document.querySelectorAll('nav > ul > li > a');
+  for (let i = 0; i < allLinks.length; i++) {
+    if ((allLinks[i].getAttribute('href')) === currentUrl) {
+            allLinks[i].style.fontSize = '32px';
+            allLinks[i].style.backgroundColor = 'white';
+    }
+  }
+  
+  
+
+
+</script>
+</html>

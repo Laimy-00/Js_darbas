@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mano puslapis</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+        <link rel="stylesheet" href="/css/design.css">
+        <link rel="stylesheet" href="/css/chess.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Pradžia</a>
+                    </li>
+                    <li>
+                        <a href="kontaktai.html">Kontaktai</a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="payment.html">Payment</a>
+                    </li>
+                    <li>
+                        <a href="index5.html">Uzdotis</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="port">
+            <img src="/img/off.png" id="lempute"/>
+            <h1 id="uuid2">Darbas su Elementais</h1>
+            <h3 id="uuid">Sveiki čia matysime rezultatus</h3>
+            <button onclick="showAlert()">Skaiciuoti paveikslelius</button>
+            <hr/>
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <img src="/img/logo.png" alt="Foto" class="galerijos_foto">
+            <hr/>
+            <div class="wrapper">
+                <div class="element">
+                    1-mas elementas
+                </div>
+                <div class="element">
+                    2-ras elementas
+                </div>
+                <div class="element">
+                    3-čias elementas
+                </div>
+                <div class="element">
+                    4-tas elementas
+                </div>
+            </div>
+        </main>
+        <footer class="main">
+            <span class="ft">&ltfooter></span>
+        </footer>
+    </body>
+
+
+    <script>
+        let images = document.getElementsByTagName('img');
+        let txt = 'Faile yra ' + images.length + ' <img> elementų';
+        console.log(txt);
+
+        let txt2 = 'Faile yra ' + images.length + ' &lt;img> elementų';
+        document.getElementById("uuid").innerHTML = txt2;
+
+        function showAlert() {
+
+            alert(`Paveikslėlių kiekis: ${images.length}`);
+        }
+
+        for (let i = 0; i < images.length; i++) {
+            if (i % 2 === 0) {
+                images[i].setAttribute("alt","testas")
+            }
+        }
+
+        let item =  document.getElementById("uuid");
+        item.style.fontSize = '24px';
+        item.style.backgroundColor = 'green';
+        item.style.width = '200px';
+        item.style.height = '200x';
+
+        let settings = [
+        {
+        "title": "Pradžia",
+        "url": "/"
+        },
+        {
+        "title": "Kontaktai",
+        "url": "kontaktai.html"
+        },
+        {
+        "title": "Portfolio",
+        "url": "portfolio.html"
+        },
+        {
+        "title": "Payment",
+        "url": "payment.html"
+        },
+        {
+        "title": "Uzdotis",
+        "url": "index5.html"
+        }
+      ];
+      const aTags = document.querySelectorAll('nav > ul > li > a');
+      aTags.forEach(a => a.remove());
+    
+      const liTags = document.querySelectorAll('nav > ul > li');
+      liTags.forEach(li => li.remove());
+    
+      let navList = document.querySelector("nav > ul");
+      for (let i = 0; i < settings.length; i++) {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.textContent = settings[i].title;
+        link.href = settings[i].url;
+        listItem.appendChild(link);
+        navList.appendChild(listItem);    
+      }
+    
+    
+    
+      const currentUrl = window.location.pathname;
+      const allLinks = document.querySelectorAll('nav > ul > li > a');
+      for (let i = 0; i < allLinks.length; i++) {
+        if (('/' + allLinks[i].getAttribute('href')) === currentUrl) {
+            allLinks[i].style.fontSize = '32px';
+            allLinks[i].style.backgroundColor = 'white';
+        }
+      }  
+    </script>
+
+</html>

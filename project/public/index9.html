@@ -1,0 +1,57 @@
+<style>
+    * {
+    box-sizing: border-box;
+    }
+
+    form {
+    width: 400px;
+    margin: 50px auto;
+    }
+
+    form input {
+    width: 100%;
+    padding: 10px;
+    }
+
+</style>
+<form>
+    <input id="number" type="text" placeholder="Enter Number" />
+</form> 
+<script>   
+    const input = document.getElementById('number');
+    input.addEventListener('input', function() {
+        let number = input.value;
+        console.log(number);
+        if (number.length < 2){
+            console.log('Good');
+        } else {
+            input.blur();
+            checking(number);
+        }
+    });
+
+    function checking(number) {
+        const divs = document.querySelectorAll('div');
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].remove();
+        } 
+        const brs = document.querySelectorAll('br');
+        for (let i = 0; i < brs.length; i++) {
+            brs[i].remove();
+        } 
+        if ((number > 0) && (number < 100)) {
+            const div = document.createElement('div');
+            const br = document.createElement('br');
+            div.textContent = 'Tai yra skaicius tarp 0 ir 99';
+            div.style.backgroundColor = 'green';
+            input.parentNode.insertBefore(div, input);
+            input.parentNode.insertBefore(br, input);
+        } else {
+            const div = document.createElement('div');
+            div.textContent = `Tai nera skaicius ARBA mazesnis uz 0 ARBA didesnis uz 99, jus ivedete ${number}`;
+            div.style.backgroundColor = 'red';
+            div.style.marginTop = '20';
+            input.parentNode.append(div);
+        }
+    }
+</script>

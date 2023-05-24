@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/cards.css">
+</head>
+<body>
+    <div class="forForm">
+        <h1>FlashCards</h1>
+        <form action="">
+            <label for="frontTextarea">Front of the Card (Term or Question)</label>
+            <textarea id="frontTextarea" cols="30" rows="10"></textarea>
+            <label for="backTextarea">Back of the Card (Definition or Answer)</label>
+            <textarea id="backTextarea" cols="30" rows="10"></textarea>
+            <button id="saveButton">Save Card</button>
+        </form>
+        <button id="reviewButton">Review Card</button>
+    </div>
+    <div class="forInfo">
+        <h2>Make a Flash Card</h2>
+        <p>Let`s make a flash card. On the front of the flash card put the term or question you`re trying to remember and the definition or answer on the back.</p>
+        <p>Number of FlashCards:</p>
+    </div>
+</body>
+<script>
+    const frontCard = document.getElementById('frontTextarea');
+    const backCard = document.getElementById('backTextarea');
+    const saveButton = document.getElementById('saveButton');
+    const reviewButton = document.getElementById('reviewButton');
+    let index = 1;
+    if (localStorage.getItem('index')) {
+        index = localStorage.getItem('index');
+    }
+    if (!localStorage.getItem('cards')) {
+        
+    }
+    saveButton.addEventListener('click', function() {
+        if (frontCard.value && backCard.value) {
+            let name = "card" + index;
+            index++;
+            const card = {'name': name,
+                'front' : frontCard.value,
+                'back' : backCard.value
+            }
+            
+        }
+    });
+</script>
+</html>
