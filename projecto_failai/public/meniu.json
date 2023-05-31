@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Pradžia",
+    "url": "/"
+  },
+  {
+    "title": "CV",
+    "url": "/cv"
+  },
+  {
+    "title": "Portfolio",
+    "url": "/portfolio"
+  },
+  {
+    "title": "Kontaktai",
+    "url": "/kontaktai"
+  },
+  {
+    "title": "Admin",
+    "url": "/admin"
+  }
+]

@@ -1,0 +1,15 @@
+body{
+    padding: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    color: aqua;
+    background-color: black;
+}
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
